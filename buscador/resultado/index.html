@@ -21,7 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	 <style>
+	<style>
     /*Quitamos margenes y redondeo de bordes de la barra de navegación*/ 
     .navbar {
       margin-bottom: 0;
@@ -71,8 +71,8 @@
     </div>
     <div class="collapse navbar-collapse" id="barranavsup">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
-        <li><a href="buscador/">Buscador</a></li>
+        <li><a href="../../">Inicio</a></li>
+        <li class="active"><a href="../">Buscador</a></li>
 		<li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acerca de <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -93,6 +93,7 @@
 </nav>
   
 <div class="container-fluid text-center">    
+  <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-xs-2 col-sm-2 col-lg-1 sidenav">
       <p><a href="#">Enlace1</a></p>
@@ -100,16 +101,43 @@
       <p><a href="#">Enlace3</a></p>
     </div>
     <div class="col-xs-10 col-sm-10 col-lg-11 text-justified"> 
-      <h1>Bienvenido</h1>
-      <p>Este es el índice provisional de la web del proyecto de investigacion MetaResearch.</p>
+      <h1>Buscador</h1>
       <hr>
-      <h3>Noticias</h3>
-      <h6>13/05/2016</h6>
-	  <p>Será en este día cuando se libere esta web al resto de integrantes del grupo de investigación. </p>
+	<div class="container-fluid text-justified">
+     <div class="alert alert-success">
+       <strong>[Consulta realizada con éxito]</strong> Hemos encontrado 6 items que concuerdan con las opciones seleccionadas.
+      </div>
+	  <div class="panel-group">
+	  <div class="panel panel-default">
+      <div class="panel-heading">Cabecera1</div>
+      <div class="panel-body">Contenido1</div>
+	  </div>
+	  <div class="panel panel-default">
+      <div class="panel-heading">Cabecera2</div>
+      <div class="panel-body">Contenido2</div>
+	  </div>
+    <div class="panel panel-default">
+	<div class="panel-heading">Cabecera3</div>
+	<div class="panel-body">Contenido3</div>
     </div>
-    </div>
+        <div class="panel panel-default">
+		<div class="panel-heading">Cabecera4</div>
+		<div class="panel-body">Contenido4</div>
+		</div>
+		<div class="panel panel-default">
+		<div class="panel-heading">Cabecera5</div>
+		<div class="panel-body">Contenido5</div>
+		</div>
+		<div class="panel panel-default">
+		<div class="panel-heading">Cabecera6</div>
+		<div class="panel-body">Contenido6</div>
+		</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
-</div>
 
 <footer class="container-fluid text-center">
   <p>Ingeniería del Software 2016 - Proyecto creado por Alberto Zamora, Carlos Pantoja y Alvaro Casado</p>
