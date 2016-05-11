@@ -105,11 +105,12 @@
   <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#busqreci">Recientes</button></p>
 	  
 	  
-      <p><a href="#" class="btn btn-default">Enlace3</a></p>
+   <!-- <p><a href="#" class="btn btn-default">Enlace3</a></p> -->
       </div>
     <div class="col-xs-10 col-sm-10 col-lg-11 text-justified"> 
       <h1>Buscador</h1>
-      <p>A la izquierda se encuentran las opciones de busqueda, para comenzar la busqueda defina dichas opciones y pulse en "Enviar".</p>
+      <p>Para comenzar a realizar busquedas haga click en "Opciones".</p>
+	  <p>Alternativamente puede volver a realizar busquedas que haya realizado recientemente haciendo click en "Recientes"</p>
 	  
   <!-- Modal de opciones -->
   
@@ -121,7 +122,31 @@
           <h4 class="modal-title">Opciones de busqueda</h4>
         </div>
         <div class="modal-body">
-          <p>Aqui van las opciones.</p>
+          <p>Aquí van las opciones.</p>
+		  <div class="form-group">
+		  
+			<label for="predef">Busquedas predefinidas</label>
+			<select class="form-control" id="predef">
+			<option>Tipo1</option>
+			<option>Tipo2</option>
+			<option>Tipo3</option>
+			<option>Tipo4</option>
+			</select>
+			<br>
+		    <label for="Listamul1">Listado de caracterizadores (para selección multiple mantenga pulsada la tecla Control o Shift):</label>
+			<select multiple class="form-control" id="Listamul1">
+			<option>Caracterizador1</option>
+			<option>Caracterizador2</option>
+			<option>Caracterizador3</option>
+			<option>Caracterizador4</option>
+			</select>
+		  <br>
+		  <label for="comment">Reglas:</label>
+		  <textarea class="form-control" rows="5" id="comment">Regla1;
+Regla2;
+Regla3;
+		  </textarea>
+		  </div>
         </div>
         <div class="modal-footer">
 		  <a href="resultado/" class="btn btn-default">Buscar</a>
@@ -141,7 +166,7 @@
           <h4 class="modal-title">Busquedas Recientes</h4>
         </div>
         <div class="modal-body">
-          <p>Aqui mostramos el listado de busquedas recientes.</p>
+          <p>Aquí mostramos el listado de busquedas recientes.</p>
         </div>
         <div class="modal-footer">
 		  <a href="resultado/" class="btn btn-default">Buscar</a>
