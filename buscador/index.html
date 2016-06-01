@@ -42,7 +42,12 @@
 	function aniadir(){
 	
 	var e = document.getElementById("zonadeprueba");
+	var emul = document.getElementById("Listamul1");
 	var seleccion = getSelectValues(document.getElementById("Listamul1"));
+	
+	var disablelista = document.createAttribute("disabled");
+	emul.selectedIndex = -1;
+	emul.setAttributeNode(disablelista);
 	
 	for (i = 0, Len = seleccion.length; i<Len; i++){
 	
