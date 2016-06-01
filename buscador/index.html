@@ -21,6 +21,83 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--	<script>
+	var i = 4;
+	function aniadir(){
+	var e = document.getElementById("modop");
+	
+	var nuevoselect = document.createElement('select');
+	var attclass = document.createAttribute("class");
+	var attid = document.createAttribute("id");
+	attclass.value = "form-control";
+	attid.value = "carac" + i;
+	nuevoselect.setAttributeNode(attclass);
+	nuevoselect.setAttributeNode(attid);
+	
+	for (j = 1; j<=4;j++){
+		var nuevaopcion = document.createElement('option');
+		var textoopcion = "Opción" + j;
+		nuevaopcion.innerHTML += textoopcion;
+		nuevoselect.appendChild(nuevaopcion)
+	}
+
+	e.appendChild(nuevoselect);
+	i += 1;
+  }
+  </script> -->
+  
+	<script>
+	
+	function getSelectValues(lista) {
+	var result = [];
+	var options = lista && lista.options;
+	var opt;
+	
+	for (var i=0, iLen=options.length; i<iLen; i++) {
+
+    opt = options[i];
+
+    if (opt.selected) {
+	result.push(opt.value || opt.text);
+			}
+		}
+	return result;
+	}
+	
+	function aniadir(){
+	
+	var e = document.getElementById("zonadeprueba");
+	var seleccion = getSelectValues(document.getElementById("Listamul1"));
+	
+	for (i = 0, Len = seleccion.length; i<Len; i++){
+	
+	var nuevolabel = document.createElement('label')
+	var attlabfor = document.createAttribute("for");
+	attlabfor.value = seleccion[i];
+	nuevolabel.innerHTML = "Regla para " + seleccion[i];
+	
+	var nuevoselect = document.createElement('select');
+	var attclass = document.createAttribute("class");
+	var attid = document.createAttribute("id");
+	attclass.value = "form-control";
+	attid.value = seleccion[i];
+	nuevoselect.setAttributeNode(attclass);
+	nuevoselect.setAttributeNode(attid);
+	for(j=1; j<=4;j++){
+	
+	var txt = "Tipo" + j;
+	var txtobj = new Option(txt,j);
+	nuevoselect.options.add(txtobj);
+	
+	}
+	e.appendChild(nuevolabel);
+	e.appendChild(nuevoselect);
+	e.innerHTML +="<br>";
+	}
+
+	}
+	</script>
+	
 	<style>
     /*Quitamos margenes y redondeo de bordes de la barra de navegación*/ 
     .navbar {
@@ -121,7 +198,7 @@
           <button type="button" class="close" data-dismiss="modal">×</button>
           <h4 class="modal-title">Opciones de busqueda</h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="modop">
           <p>Aquí van las opciones.</p>
 		  <div class="form-group">
 		  
@@ -141,7 +218,8 @@
 			<option>Caracterizador4</option>
 			</select>
 		  <hr>
-		  <p>Regla para Caracterizador1</p>
+		  <div id="zonadeprueba"></div>
+		  <!--<p>Regla para Caracterizador1</p>
 		  <label for="carac1">Tipo de regla</label>
 			<select class="form-control" id="carac1">
 			<option>Tipo1</option>
@@ -166,7 +244,7 @@
 			<option>Tipo2</option>
 			<option>Tipo3</option>
 			<option>Tipo4</option>
-			</select>
+			</select>-->
 		  <hr>
 		  <label for="comment">Reglas:</label>
 		  <textarea class="form-control" rows="5" id="comment">Regla1;
@@ -176,7 +254,7 @@ Regla3;
 		  </div>
         </div>
         <div class="modal-footer">
-		  <a href="resultado/" class="btn btn-default">Buscar</a>
+		  <button type="button" class="btn btn-default" onclick=aniadir()>Buscar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
@@ -207,7 +285,7 @@ Regla3;
 		  </div>
         </div>
         <div class="modal-footer">
-		  <a href="resultado/" class="btn btn-default">Buscar</a>
+		  <button type="button" class="btn btn-default">Buscar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
