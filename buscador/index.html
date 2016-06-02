@@ -21,63 +21,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- Script de buscador -->
-	<script>
-	function getSelectValues(lista) {
-	var result = [];
-	var options = lista && lista.options;
-	var opt;
-	
-	for (var i=0, iLen=options.length; i<iLen; i++) {
-
-    opt = options[i];
-
-    if (opt.selected) {
-	result.push(opt.value || opt.text);
-			}
-		}
-	return result;
-	}
-	
-	function aniadir(){
-	
-	var e = document.getElementById("zonadeprueba");
-	var emul = document.getElementById("Listamul1");
-	var seleccion = getSelectValues(document.getElementById("Listamul1"));
-	
-	var disablelista = document.createAttribute("disabled");
-	emul.selectedIndex = -1;
-	emul.setAttributeNode(disablelista);
-	
-	for (i = 0, Len = seleccion.length; i<Len; i++){
-	
-	var nuevolabel = document.createElement('label')
-	var attlabfor = document.createAttribute("for");
-	attlabfor.value = seleccion[i];
-	nuevolabel.setAttributeNode(attlabfor);
-	nuevolabel.innerHTML = "Regla para " + seleccion[i];
-	
-	var nuevoselect = document.createElement('select');
-	var attclass = document.createAttribute("class");
-	var attid = document.createAttribute("id");
-	attclass.value = "form-control";
-	attid.value = seleccion[i];
-	nuevoselect.setAttributeNode(attclass);
-	nuevoselect.setAttributeNode(attid);
-	for(j=1; j<=4;j++){
-	
-	var txt = "Tipo" + j;
-	var txtobj = new Option(txt,j);
-	nuevoselect.options.add(txtobj);
-	
-	}
-	e.appendChild(nuevolabel);
-	e.appendChild(nuevoselect);
-	e.innerHTML +="<br>";
-	}
-
-	}
-	</script>
 	
 	<style>
     /*Quitamos margenes y redondeo de bordes de la barra de navegación*/ 
@@ -140,11 +83,10 @@
           <li><a href="#">Estadísticas</a></li>
 		  </ul>
 		  </li>
-		  <li><a href="#">Contacto</a></li>
 		  </ul>
       <ul class="nav navbar-nav navbar-right">
-	    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Invitado</a></li>
+        <li><a data-toggle="modal" href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -180,37 +122,33 @@
           <h4 class="modal-title">Opciones de busqueda</h4>
         </div>
         <div class="modal-body" id="modop">
-		  <div class="form-group">
+ 		  <div class="form-group">
 		  
+			<label for="categorias">Categorías</label>
+			<select class="form-control" id="categorias">
+			<option>Cat1</option>
+			<option>Cat2</option>
+			<option>Cat3</option>
+			<option>Cat4</option>
+			</select>
+			
 			<label for="predef">Búsquedas predefinidas</label>
 			<select class="form-control" id="predef">
-			<option>Tipo1</option>
-			<option>Tipo2</option>
-			<option>Tipo3</option>
-			<option>Tipo4</option>
+			<option>Predef1</option>
+			<option>Predef2</option>
+			<option>Predef3</option>
+			<option>Predef4</option>
 			</select>
-			<br>
-		    <label for="Listamul1">Listado de caracterizadores (para selección múltiple mantenga pulsada la tecla Control o Shift):</label>
-			<select multiple class="form-control" id="Listamul1">
-			<option>Caracterizador1</option>
-			<option>Caracterizador2</option>
-			<option>Caracterizador3</option>
-			<option>Caracterizador4</option>
-			</select>
-			<br>
-			<div class="text-right"><button type="button" class="btn btn-default" onclick=aniadir()>Definir Reglas</button></div>
-		  <hr>
-		  <div id="zonadeprueba"></div>
 		  <hr>
 		  <label for="comment">Reglas definidas:</label>
 		  <textarea class="form-control" rows="5" id="comment">Regla1;
 Regla2;
 Regla3;
-		  </textarea>
+Regla4;</textarea>
 		  </div>
         </div>
         <div class="modal-footer">
-		  <a href="resultado/"><button type="button" class="btn btn-default">Buscar</button></a>
+		  <button type="button" class="btn btn-default">Buscar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
@@ -240,7 +178,42 @@ Regla3;
 		  </div>
         </div>
         <div class="modal-footer">
-		  <a href="resultado/"><button type="button" class="btn btn-default">Buscar</button></a>
+		  <button type="button" class="btn btn-default">Buscar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+    </div>
+	
+	
+	<!-- Modal de login -->
+	  
+	<div class="modal fade" id="login" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body row text-left">
+          <div class ="form-group col-xs-6 col-sm-6 col-lg-6">
+		  
+			<label for="user">Usuario</label>
+			<input type="text" class="form-control" id ="user">
+			<br>
+			<label for="pass">Contraseña</label>
+			<input type="password" class="form-control" id="pass">
+			<br>
+			<label><input type="checkbox" value =""> Recordar datos</label>
+		  </div>
+		  <div class="form-group col-xs-6 col-sm-6 col-lg-6 text-center">
+		  	<label>¿No está registrado?</label>
+			<p>Le invitamos a registrarse <strong><a href=../registro/>aquí</a></strong>.</p>
+			<br>			
+		  </div>
+        </div>
+        <div class="modal-footer">
+		  <a href="../../IngSoft/"><button type="button" class="btn btn-default">Aceptar</button></a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
