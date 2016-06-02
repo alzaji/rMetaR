@@ -180,7 +180,6 @@
           <h4 class="modal-title">Opciones de busqueda</h4>
         </div>
         <div class="modal-body" id="modop">
-          <p>Aquí van las opciones.</p>
 		  <div class="form-group">
 		  
 			<label for="predef">Búsquedas predefinidas</label>
@@ -198,10 +197,12 @@
 			<option>Caracterizador3</option>
 			<option>Caracterizador4</option>
 			</select>
+			<br>
+			<div class="text-right"><button type="button" class="btn btn-default" onclick=aniadir()>Definir Reglas</button></div>
 		  <hr>
 		  <div id="zonadeprueba"></div>
 		  <hr>
-		  <label for="comment">Reglas:</label>
+		  <label for="comment">Reglas definidas:</label>
 		  <textarea class="form-control" rows="5" id="comment">Regla1;
 Regla2;
 Regla3;
@@ -209,7 +210,7 @@ Regla3;
 		  </div>
         </div>
         <div class="modal-footer">
-		  <button type="button" class="btn btn-default" onclick=aniadir()>Buscar</button>
+		  <a href="resultado/"><button type="button" class="btn btn-default">Buscar</button></a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
@@ -226,7 +227,6 @@ Regla3;
           <h4 class="modal-title">Búsquedas Recientes</h4>
         </div>
         <div class="modal-body">
-          <p>Aquí mostramos el listado de búsquedas recientes.</p>
 		  <div class ="form-group">
 		  
 			<label for="reclistamul2">Últimas búsquedas realizadas (para selección múltiple mantenga pulsada la tecla Control o Shift):</label>
@@ -240,7 +240,7 @@ Regla3;
 		  </div>
         </div>
         <div class="modal-footer">
-		  <button type="button" class="btn btn-default">Buscar</button>
+		  <a href="resultado/"><button type="button" class="btn btn-default">Buscar</button></a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
