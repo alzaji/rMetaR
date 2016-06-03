@@ -16,28 +16,28 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	 <style>
-    /*Quitamos margenes y redondeo de bordes de la barra de navegación*/ 
+    /*Quitamos margenes y redondeo de bordes de la barra de navegación*/
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
+
     /* Configuramos altura de la cuadrícula para que .sidenav sea el 100% */
     .row.content {height: 867px}
-    
+
     /* fondo gris y 100% de altura en sidenav */
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
       height: 100%;
     }
-    
+
     /* Configuramos color de fondo, texto y algo de desplazamiento para el pie de página*/
     footer {
   	  position: bottom;
@@ -47,14 +47,14 @@
       color: white;
       padding: 15px;
     }
-    
+
     /* Para pantallas pequeñas pon altura en auto para la cuadrícula y .sidenav*/
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content {height:auto;}
     }
   </style>
   </head>
@@ -65,7 +65,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barranavsup">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">MetaResearch</a>
     </div>
@@ -90,12 +90,12 @@
     </div>
   </div>
 </nav>
-  
-<div class="container-fluid text-center">    
+
+<div class="container-fluid text-center">
   <div class="row content">
     <div class="col-xs-2 col-sm-2 col-lg-2 sidenav">
       </div>
-    <div class="col-xs-8 col-sm-8 col-lg-8 text-justified"> 
+    <div class="col-xs-8 col-sm-8 col-lg-8 text-justified">
       <h1>Registro</h1>
 	  <hr>
 	  <label for="nombre">Nombre</label>
@@ -116,12 +116,22 @@
 	  <label for="infoadd">Información adicional (CIF/Grupo de Investigación...)</label>
 	  <input type="text" class ="form-control" id="infoadd">
 	  <br>
+    <label for="chosenuser">Usuario</label>
+    <input type="text" class="form-control" id="chosenuser">
+    <br>
+    <label for="chosenpwd">Contraseña</label>
+    <input type="password" class="form-control" id="chosenpwd">
+    <br>
+    <hr>
+    <ul><button type="button" class="btn btn-default">Aceptar</button>
+        <a href="../"><button type="button" class="btn btn-default">Cancelar</button></a>
+    </ul>
 	  </div>
 	  <div class="col-xs-2 col-sm-2 col-lg-2 sidenav">
       </div>
-	
+
 		<!-- Modal de login -->
-	  
+
 	<div class="modal fade" id="login" role="dialog" style="display: none;">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -131,7 +141,7 @@
         </div>
         <div class="modal-body row text-left">
           <div class ="form-group col-xs-6 col-sm-6 col-lg-6">
-		  
+
 			<label for="user">Usuario</label>
 			<input type="text" class="form-control" id ="user">
 			<br>
@@ -143,7 +153,7 @@
 		  <div class="form-group col-xs-6 col-sm-6 col-lg-6 text-center">
 		  	<label>¿No está registrado?</label>
 			<p>Le invitamos a registrarse <strong><a href=.>aquí</a></strong>.</p>
-			<br>			
+			<br>
 		  </div>
         </div>
         <div class="modal-footer">
@@ -153,9 +163,9 @@
       </div>
     </div>
     </div>
-	
+
 	<!-- Fin modal login -->
-	
+
     </div>
   </div>
 </div>
