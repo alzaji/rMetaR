@@ -1,4 +1,4 @@
-﻿Web para el proyecto de investigación Fabián Vaccaro y José Ignacio Peláez
+﻿Web para el proyecto de investigación de Fabián Vaccaro y José Ignacio Peláez
 
 Integrantes
 
